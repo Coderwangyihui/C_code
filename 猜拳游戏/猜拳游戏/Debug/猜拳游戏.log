@@ -1,0 +1,3 @@
+﻿  猜拳游戏.c
+D:\learning C\猜拳游戏\猜拳游戏\猜拳游戏.c(9,18): warning C4244: “函数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  猜拳游戏.vcxproj -> D:\learning C\猜拳游戏\Debug\猜拳游戏.exe
