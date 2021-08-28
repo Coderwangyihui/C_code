@@ -1,0 +1,3 @@
+﻿  game.c
+D:\learning C\noughts-and-crosses\noughts-and-crosses\game.c(102): warning C4715: “Judgement”: 不是所有的控件路径都返回值
+  noughts-and-crosses.vcxproj -> D:\learning C\noughts-and-crosses\Debug\noughts-and-crosses.exe
