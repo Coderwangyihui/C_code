@@ -75,13 +75,15 @@ void Computermove(char board[][col], int Row, int Col)
 }
 char Judgement(char board[][col], int Row, int Col)
 {
-	int i,j,a, count = 0;//count is a varible for judgement
+	int i, j;
 	/*if (board[0][i] == board[0][i + 1] && board[0][i + 1] == board[0][i + 2] && board[0][i] != ' ')
 		return board[0][i];*/
-	for (j = 0;j < row-2;j++)
+	//error code:
+	/*for (j = 0;j < row-1;j++)
 	{
 		for (i = 0;i < col - 2;i++)
 		{
+			int count = 0;
 			if (board[j][i] == board[j][i + 1] && board[j][i + 1] == board[j][i + 2] && board[j][i] != ' ')
 				count ++;
 			if (board[j][i] == board[j + 1][i] && board[j + 1][i] == board[j + 2][i] && board[j][i] != ' ')
@@ -90,14 +92,56 @@ char Judgement(char board[][col], int Row, int Col)
 				count ++;
 			if (count)
 				return board[j][i];
-			else 
-				if(a=Isfull(board, row, col))
-				{
-				return 'd';
-				}
+			else
+			{
+				if (Isfull(board, row, col))
+					return 'd';
 				else
 					return 'c';
+			}	
 		}
+	}*/
+	int count = 0;
+	for (j = 0;j < row;j++)
+	{
+		for (i = 0;i < col - 2;i++)
+		{
+			if (board[j][i] == board[j][i + 1] && board[j][i + 1] == board[j][i + 2] && board[j][i] != ' ')
+				count++;
+		}
+	}
+	for (j = 0;j < row-2;j++)
+	{
+		for (i = 0;i < col;i++)
+		{
+			if (board[j][i] == board[j+1][i] && board[j+1][i] == board[j+2][i] && board[j][i] != ' ')
+				count++;
+		}
+	}
+	for (j = 0;j < row - 2;j++)
+	{
+		for (i = 0;i < col-2;i++)
+		{
+			if (board[j][i] == board[j + 1][i+1] && board[j + 1][i+1] == board[j + 2][i+2] && board[j][i] != ' ')
+				count++;
+		}
+	}
+	for (j = 0;j < row - 1;j++)
+	{
+		for (i = 0;i < col-1;i++)
+		{
+			if (board[j][i] == board[j + 1][i-1] && board[j][i] == board[j -1][i+1] && board[j][i] != ' ')
+				count++;
+		}
+	}
+	if (count)
+		return board[j][i];
+	else
+	{
+		if (Isfull(board, row, col))
+			return 'd';
+		else
+			return 'c';
 	}
 }
 int Isfull(char board[][col], int Row, int Col)
